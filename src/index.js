@@ -38,7 +38,8 @@ app.use("/api/user", UserRouter);
 app.use("/api/appointment", AppointmentRouter);
 app.use("/api/treatment-record", TreatmentRecordRouter);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   connect();
   console.log(`server is listening to port ${PORT}`);
