@@ -11,6 +11,10 @@ router.get("/:email", UserController.getSpecificUserByEmail);
 
 router.get("/getById/:id", UserController.getUserById);
 
+router.get("/getDoctors", UserController.getUserDoctor);
+
+router.get("/getPatients", UserController.getUserPatient);
+
 router.put(
   "/updateByContactNumber/:contactNumber",
   UserController.updateUserByContactNumber
