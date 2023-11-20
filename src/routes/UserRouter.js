@@ -20,4 +20,8 @@ router.put(
   UserController.updateUserByContactNumber
 );
 
+router.delete("/delete/:id", UserController.deleteUserDoctor);
+
+router.put("/update/doctor/:id", UserController.updateUserDoctor);
+
 module.exports = router;

@@ -135,6 +135,28 @@ const getUserPatient = async (req, res) => {
   }
 };
 
+const deleteUserDoctor = async (req, res) => {
+  try {
+    const user = await UserModel.findByIdAndDelete(req.params.id);
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const updateUserDoctor = async (req, res) => {
+  try {
+    const appointment = await UserModel.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json(appointment);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
@@ -144,4 +166,6 @@ module.exports = {
   updateUserByContactNumber,
   getUserDoctor,
   getUserPatient,
+  deleteUserDoctor,
+  updateUserDoctor,
 };
