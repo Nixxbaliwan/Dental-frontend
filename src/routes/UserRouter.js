@@ -11,17 +11,11 @@ router.get("/:email", UserController.getSpecificUserByEmail);
 
 router.get("/getById/:id", UserController.getUserById);
 
-router.get("/getDoctors/doctor", UserController.getUserDoctor);
-
-router.get("/getPatients/patient", UserController.getUserPatient);
-
 router.put(
   "/updateByContactNumber/:contactNumber",
   UserController.updateUserByContactNumber
 );
 
-router.delete("/delete/:id", UserController.deleteUserDoctor);
-
-router.put("/update/doctor/:id", UserController.updateUserDoctor);
+router.get("/getPatients/patient", UserController.getUsersByRolePatient);
 
 module.exports = router;
