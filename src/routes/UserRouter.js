@@ -18,4 +18,6 @@ router.put(
 
 router.get("/getPatients/patient", UserController.getUsersByRolePatient);
 
+router.get("/getDoctors/doctor", UserController.getUserByRoleDoctor);
+
 module.exports = router;
