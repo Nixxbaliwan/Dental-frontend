@@ -70,11 +70,10 @@ const getAppointmentByEmail = async (req, res) => {
 
 const getAppointmentCount = async (req, res) => {
   try {
-    const { email, appointmentDate, doctorEmail } = req.query;
+    const { appointmentDate, doctorEmail } = req.query;
 
     // Count appointments for the specified doctor/clinic on the given date
     const count = await AppointmentModel.countDocuments({
-      email: email,
       appointmentDate: appointmentDate,
       doctorEmail: doctorEmail,
     });
