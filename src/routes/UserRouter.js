@@ -16,8 +16,12 @@ router.put(
   UserController.updateUserByContactNumber
 );
 
+router.put("/update/doctor/:id", UserController.updateUserById);
+
 router.get("/getPatients/patient", UserController.getUsersByRolePatient);
 
 router.get("/getDoctors/doctor", UserController.getUserByRoleDoctor);
+
+router.delete("/delete/:id", UserController.deleteUserById);
 
 module.exports = router;
