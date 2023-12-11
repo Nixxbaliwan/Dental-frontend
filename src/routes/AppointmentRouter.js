@@ -18,6 +18,11 @@ router.get(
 );
 
 router.get(
+  "/getList/doctor/date",
+  AppointmentController.getAppointmentByDoctorEmailAndDate
+);
+
+router.get(
   "/getByDoctorEmail/doctorEmail/:doctorEmail",
   AppointmentController.getAppointmentsByDoctorEmail
 );

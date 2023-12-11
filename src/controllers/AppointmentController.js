@@ -85,6 +85,20 @@ const getAppointmentCount = async (req, res) => {
   }
 };
 
+const getAppointmentByDoctorEmailAndDate = async (req, res, next) => {
+  const { appointmentDate, doctorEmail } = req.query;
+
+  try {
+    const appointment = await AppointmentModel.find({
+      appointmentDate: appointmentDate,
+      doctorEmail: doctorEmail,
+    });
+    res.status(200).json(appointment);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const deleteAppointmentById = async (req, res, next) => {
   try {
     const appointment = await AppointmentModel.findOneAndDelete({
@@ -119,4 +133,5 @@ module.exports = {
   deleteAppointmentById,
   updateAppointmentById,
   getAppointmentsByDoctorEmail,
+  getAppointmentByDoctorEmailAndDate,
 };

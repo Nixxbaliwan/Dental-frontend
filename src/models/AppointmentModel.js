@@ -15,6 +15,9 @@ const AppointmentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    clientFullName: {
+      type: String,
+    },
     address: {
       type: String,
     },
