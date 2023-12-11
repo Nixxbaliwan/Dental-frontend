@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 // send verification email
 const sendVerificationEmail = async (req, res, next) => {
   let { recipient } = req.body;
-  const enableLink = `https://barber-backend-production-6f4b.up.railway.app/api/email/enable?email=${recipient}`;
+  const enableLink = `https://dental-management-api-zlpf.onrender.com/api/email/enable?email=${recipient}`;
 
   try {
     const transport = nodemailer.createTransport({
@@ -33,7 +33,7 @@ const sendVerificationEmail = async (req, res, next) => {
       <p>Click the link below to enable your account:</p>
       <a href="${enableLink}">${enableLink}</a>
 
-      <p>Regards, \n Mangubat BarberShop</p>
+      <p>Regards, \n Cota Dental</p>
       </div>`,
     };
 
