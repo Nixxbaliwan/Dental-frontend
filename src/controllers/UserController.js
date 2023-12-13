@@ -16,6 +16,7 @@ const registerUser = async (req, res) => {
       email,
       role,
       password,
+      services,
     } = req.body;
 
     const existingUser = await UserModel.findOne({ email });
@@ -38,6 +39,7 @@ const registerUser = async (req, res) => {
       email,
       role,
       password: hashedPassword,
+      services,
     });
 
     await newUser.save();
